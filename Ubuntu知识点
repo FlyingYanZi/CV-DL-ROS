@@ -1,0 +1,59 @@
+1、echo
+（1）[echo “”]将“”内的内容原样输出；
+（2）[echo str]将字符串str中的各个单词作为字符串输出，各个字符串之间用一个空格隔开；
+（3）[echo $var]将显示变量var的值；
+2、vim
+（1）[vim file]将打开名为file的文件，如果不存在就创建一个名为file的文件并打开它；
+（2）按i进入输入模式，按Esc从输入模式切换到命令模式；
+（3）进入命令模式后，按:wq保存退出，按:wq!强制保存退出，按:q退出，按:q!强制退出；
+3、cat和more
+（1）[cat file]显示名为file的文件里的内容；
+（2）[more file]显示名为file的文件里的内容，可以分页查看；
+4、source
+（1）[source file]在当前bash环境下读取并执行file中的命令；
+（2）[sh file]或者[bash file]打开一个子shell来读取并执行file中的命令，该file可以无执行权限；
+（3）[./file]打开一个子shell来读取并执行file中的命令，该file需要执行权限；
+5、压缩和解压
+（1）[tar cvf name.tar file]将file文件打包成name.tar文件；
+（2）[tar xvf file.tar]将file.tar文件解包；
+（3）[tar zcvf name.tar.gz file]将file文件压缩成name.tar.gz文件；
+（4）[tar zxvf file.tar.gz]将file.tar.gz文件解压；
+6、文件目录
+（1）/表示根目录，也就是“计算机”目录；
+（2）~表示家目录，也就是“Home”目录。在我的电脑中，/home/yuyan就表示家目录；
+（3）[cd ..]进入上级目录；
+（4）[cd ./dir]表示进入当前目录的下一级目录dir，其中.表示当前目录；
+7、文件操作
+（1）[chmod who+(或者-)operation file]表示修改文件file的权限。其中who的可选项有u（表示用户），g（表示同组），o（表示其他）和a（表示所有）。+表示添加某个权限，-表示取消某个权限。operation的可选项有r（表示可读），w（表示可写），和x（表示可执行）等；
+eg. [chmod a+x file]表示对file文件添加所有用户的可执行权限。
+（2）[pwd]用于显示当前的工作目录，绝对路径；
+（3）[cd dir]用于切换工作路径，dir为绝对路径或者当前目录的子目录。[cd -]返回上一次的目录；
+（4）[ls]用于显示目录中有哪些文件；
+（5）[mkdir folder]用于在当前目录下创建文件夹folder；
+（6）[cp sourcefile objectfile]将sourcefile复制为objectfile文件，[cp sourcefile objectdirectory]将sourcefile文件复制到objectdirectory目录当中（绝对目录）；
+（7）[mv sourcefile objectfile]将sourcefile重命名为objectfile文件，[mv sourcefile objectdirectory]将sourcefile文件剪切到objectdirectory目录当中（绝对目录）；
+（8）[rm file]删除文件file，[rm -r folder]删除文件夹folder；
+（9）[find directory -name ‘file’ -print]在directory目录下按照名称查找file文件；
+（10）[find directory -name 'folder' -type d]在directory目录下按照名称查找文件夹folder；
+（11）[locate file]查找file文件，一般先在命令行中输入sudo updatedb更新数据库；
+（12）[locate directory/nv]在directory目录下查找所有以nv开头的文件，一般先在命令行中输入sudo updatedb更新数据库；
+（13）[whereis file]用于查找二进制文件（-b），源代码文件（-s），和说明文件（-m）；
+8、软件操作
+（1）查找软件安装到了哪里？先执行该程序，然后用命令[ps -e]找到该程序的名字name，最后用[whereis name]查找软件位置；
+（2）ps命令用来列出系统中当前运行的进程；
+（3）如何打开软件？可以在dash菜单中查找软件然后打开，或者在终端中输入软件名；
+（4）[pkg-config --modversion lib]查找lib库的版本；
+（5）[dpkg -l software]查找软件software的版本；
+（6）dpkg命令被用来安装，创建和管理软件包；
+（7）[sudo apt-get update]更新软件信息数据库；
+（8）[sudo apt-get upgrade]升级系统；
+（9）[sudo apt-get remove --purge package]删除package包以及相应的配置文件；
+9、管道命令
+（1）命令a|命令b，把命令a的输出作为命令b的输入，然后命令b的输出直接显示在屏幕上；
+（2）grep命令可以使用正则表达式搜索文本；
+ 
+
+
+
+
+
